@@ -208,52 +208,20 @@ window.closeLightbox = closeLightbox;
 function initializeRSVP() {
     const form = document.getElementById('rsvp-form');
     const confirmation = document.getElementById('rsvp-confirmation');
-    const googleFormUrl = form.dataset.googleFormUrl || '';
 
     form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
         const fullname = document.getElementById('fullname').value.trim();
         const guests = document.getElementById('guests').value;
         const attendance = document.querySelector('input[name="attendance"]:checked');
-        const message = document.getElementById('message').value.trim();
 
         if (!fullname || !guests || !attendance) {
+            e.preventDefault();
             alert('Please fill in all required fields.');
             return;
         }
 
-        if (!googleFormUrl || googleFormUrl === 'PASTE_YOUR_GOOGLE_FORM_LINK_HERE') {
-            alert('Please add your Google Form URL in index.html on the RSVP form.');
-            return;
-        }
-
-        const attendanceValue = attendance.value;
-        form.classList.add('hidden');
         confirmation.classList.remove('hidden');
-        confirmation.querySelector('.confirmation-message').textContent = 'Redirecting you to our Google Form...';
-
-        const params = new URLSearchParams({
-            fullname: fullname,
-            guests: guests,
-            attendance: attendanceValue,
-            message: message
-        });
-
-        const fullUrl = googleFormUrl.includes('?')
-            ? `${googleFormUrl}&${params.toString()}`
-            : `${googleFormUrl}?${params.toString()}`;
-
-        window.open(fullUrl, '_blank', 'noopener,noreferrer');
-
-        console.log('RSVP redirecting to Google Form:', {
-            name: fullname,
-            guests: guests,
-            attendance: attendanceValue,
-            message: message,
-            url: fullUrl,
-            timestamp: new Date().toISOString()
-        });
+        confirmation.querySelector('.confirmation-message').textContent = 'Submitting your RSVP...';
     });
 }
 
