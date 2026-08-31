@@ -74,10 +74,17 @@ button {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  isolation: isolate;
+  z-index: 0;
+}
+
+.background-orb,
+.botanical {
+  position: absolute;
+  z-index: 0;
 }
 
 .background-orb {
-  position: absolute;
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.34;
@@ -138,7 +145,7 @@ button {
 .site-header {
   position: sticky;
   top: 1rem;
-  z-index: 50;
+  z-index: 100;
   width: var(--container);
   margin: 0 auto;
   padding-top: 1rem;
@@ -149,6 +156,7 @@ button {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  z-index: 120;
   padding: 0.9rem 1.2rem;
   border-radius: 999px;
   background: rgba(14, 40, 39, 0.38);
@@ -180,6 +188,8 @@ button {
 }
 
 .nav-menu {
+  position: relative;
+  z-index: 130;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1239,7 +1249,7 @@ h3 {
   .site-header {
     position: sticky;
     top: 0.5rem;
-    z-index: 80;
+    z-index: 200;
     width: min(100% - 1rem, 100%);
     padding-top: 0.75rem;
     margin-bottom: 1rem;
@@ -1247,7 +1257,7 @@ h3 {
 
   .nav {
     position: relative;
-    z-index: 10;
+    z-index: 220;
     padding: 0.8rem 0.9rem;
     margin: 0 0.1rem;
   }
@@ -1263,7 +1273,7 @@ h3 {
   .nav-menu {
     left: 0.55rem;
     right: 0.55rem;
-    z-index: 15;
+    z-index: 240;
   }
 
   .hero-section {
