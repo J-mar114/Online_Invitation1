@@ -21,6 +21,10 @@ const body = document.body;
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const musicToggle = document.getElementById('musicToggle');
+const backgroundMusic = new Audio('./bg.mp3');
+backgroundMusic.loop = true;
+backgroundMusic.volume = 0.7;
+backgroundMusic.preload = 'auto';
 const overlay = document.getElementById('invitationOverlay');
 const openInvitationBtn = document.getElementById('openInvitationBtn');
 const revealItems = document.querySelectorAll('.reveal');
@@ -169,10 +173,44 @@ const closeMobileMenu = () => {
   navMenu.classList.remove('is-open');
 };
 
+const initializeBackgroundMusic = () => {
+  if (!backgroundMusic) return;
+
+  const startPlayback = async () => {
+    try {
+      backgroundMusic.volume = 0;
+      await backgroundMusic.play();
+
+      const fadeIn = setInterval(() => {
+        if (backgroundMusic.volume < 0.7) {
+          backgroundMusic.volume = Math.min(backgroundMusic.volume + 0.04, 0.7);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 80);
+
+      musicToggle?.classList.remove('is-muted');
+    } catch {
+      musicToggle?.classList.add('is-muted');
+    }
+  };
+
+  const retryOnInteraction = () => {
+    startPlayback();
+    document.removeEventListener('pointerdown', retryOnInteraction);
+    document.removeEventListener('keydown', retryOnInteraction);
+  };
+
+  startPlayback();
+  document.addEventListener('pointerdown', retryOnInteraction, { once: true });
+  document.addEventListener('keydown', retryOnInteraction, { once: true });
+};
+
 const handleInvitationOpen = () => {
   if (!overlay) return;
   overlay.classList.add('hidden');
   document.body.classList.add('invitation-open');
+  initializeBackgroundMusic();
 };
 
 const copyToClipboard = async (text) => {
@@ -290,11 +328,39 @@ copyButtons.forEach((button) => {
   button.addEventListener('click', () => copyToClipboard(button.dataset.copy || ''));
 });
 
-musicToggle?.addEventListener('click', () => {
-  musicToggle.classList.toggle('is-muted');
+musicToggle?.addEventListener('click', async () => {
+  const isMuted = musicToggle.classList.contains('is-muted');
+  musicToggle.classList.toggle('is-muted', !isMuted);
+
+  if (isMuted) {
+    try {
+      backgroundMusic.volume = 0;
+      await backgroundMusic.play();
+
+      const fadeIn = setInterval(() => {
+        if (backgroundMusic.volume < 0.7) {
+          backgroundMusic.volume = Math.min(backgroundMusic.volume + 0.04, 0.7);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 80);
+    } catch {
+      musicToggle.classList.add('is-muted');
+    }
+  } else {
+    const fadeOut = setInterval(() => {
+      if (backgroundMusic.volume > 0) {
+        backgroundMusic.volume = Math.max(backgroundMusic.volume - 0.06, 0);
+      } else {
+        clearInterval(fadeOut);
+        backgroundMusic.pause();
+      }
+    }, 80);
+  }
 });
 
 if (document.querySelector('[data-time-unit]')) setCountdown();
+initializeBackgroundMusic();
 initializeRevealObserver();
 initializeTypewriter();
 setupGalleryModal();
