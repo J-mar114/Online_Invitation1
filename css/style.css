@@ -1237,13 +1237,17 @@ h3 {
 
 @media (max-width: 640px) {
   .site-header {
-    position: static;
+    position: sticky;
+    top: 0.5rem;
+    z-index: 80;
     width: min(100% - 1rem, 100%);
     padding-top: 0.75rem;
     margin-bottom: 1rem;
   }
 
   .nav {
+    position: relative;
+    z-index: 10;
     padding: 0.8rem 0.9rem;
     margin: 0 0.1rem;
   }
@@ -1259,6 +1263,7 @@ h3 {
   .nav-menu {
     left: 0.55rem;
     right: 0.55rem;
+    z-index: 15;
   }
 
   .hero-section {
@@ -1319,7 +1324,11 @@ h3 {
   }
 
   .section-shell {
-    padding-top: 3.2rem;
+    padding-top: 4.2rem;
+  }
+
+  .intro-section {
+    margin-top: 0.5rem;
   }
 
   .section-heading.split-heading {
@@ -1367,7 +1376,9 @@ h3 {
   }
 
   .site-header {
-    position: static;
+    position: sticky;
+    top: 0.4rem;
+    z-index: 80;
     margin-bottom: 1.2rem;
   }
 
@@ -1377,6 +1388,14 @@ h3 {
 
   .hero-frame {
     margin-top: 1rem;
+  }
+
+  .section-shell {
+    padding-top: 4.8rem;
+  }
+
+  .intro-section {
+    margin-top: 0.75rem;
   }
 
   .site-main,
