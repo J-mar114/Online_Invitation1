@@ -1239,10 +1239,12 @@ h3 {
   .site-header {
     width: min(100% - 1rem, 100%);
     padding-top: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .nav {
     padding: 0.8rem 0.9rem;
+    margin: 0 0.1rem;
   }
 
   .brand {
@@ -1260,13 +1262,14 @@ h3 {
 
   .hero-section {
     min-height: auto;
-    padding-top: 1rem;
+    padding-top: 0;
   }
 
   .hero-frame {
     min-height: 72vh;
     padding: 2rem 1.15rem;
     border-radius: 1.5rem;
+    margin-top: 0.75rem;
   }
 
   .hero-names {
@@ -1360,6 +1363,19 @@ h3 {
 @media (max-width: 480px) {
   :root {
     --container: min(100% - 0.75rem, 100%);
+  }
+
+  .site-header {
+    position: static;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-section {
+    padding-top: 0;
+  }
+
+  .hero-frame {
+    margin-top: 1rem;
   }
 
   .site-main,
