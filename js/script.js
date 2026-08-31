@@ -321,15 +321,12 @@ const setupAttendanceSelection = () => {
 const handleFormSubmit = () => {
   if (!rsvpForm) return;
 
-  rsvpForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (!successMessage) return;
-    successMessage.classList.add('visible');
-    rsvpForm.reset();
-    setupAttendanceSelection();
-    setTimeout(() => {
-      window.location.href = './thank-you.html';
-    }, 1500);
+  rsvpForm.addEventListener('submit', () => {
+    // Do not reset the form here. Resetting it before the browser completes the POST
+    // would clear the name/message values before Formspree receives them.
+    if (successMessage) {
+      successMessage.classList.add('visible');
+    }
   });
 };
 
