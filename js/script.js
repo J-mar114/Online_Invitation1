@@ -121,21 +121,39 @@ const initializeRevealObserver = () => {
 const initializeTypewriter = () => {
   const typewriterEls = document.querySelectorAll('.typewriter');
 
-  typewriterEls.forEach((element) => {
-    const text = element.dataset.text || element.textContent || '';
-    element.textContent = '';
+  if (!typewriterEls.length) return;
 
-    let index = 0;
-    const tick = () => {
-      if (index <= text.length) {
-        element.textContent = text.slice(0, index);
-        index += 1;
-        setTimeout(tick, 45);
-      }
-    };
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
 
-    tick();
-  });
+        const element = entry.target;
+        if (element.dataset.typingStarted === 'true') return;
+
+        element.dataset.typingStarted = 'true';
+
+        const text = element.dataset.text || element.textContent || '';
+        const speed = Number(element.dataset.typeSpeed || 110);
+        element.textContent = '';
+
+        let index = 0;
+        const tick = () => {
+          if (index <= text.length) {
+            element.textContent = text.slice(0, index);
+            index += 1;
+            setTimeout(tick, speed);
+          }
+        };
+
+        tick();
+        observer.unobserve(element);
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  typewriterEls.forEach((element) => observer.observe(element));
 };
 
 const toggleMobileMenu = () => {
