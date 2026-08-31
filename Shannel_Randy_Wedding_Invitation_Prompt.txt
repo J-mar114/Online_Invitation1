@@ -1,0 +1,764 @@
+Create a complete premium multi-page online wedding invitation website for “Shannel & Randy”.
+
+TECHNOLOGY
+
+Use only:
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+Do not use React, Vue, Angular, Bootstrap, Tailwind, or other frameworks.
+
+The website must work as a static website and must be compatible with GitHub Pages.
+
+PROJECT STRUCTURE
+
+wedding-invitation/
+│
+├── index.html
+├── story.html
+├── details.html
+├── entourage.html
+├── gallery.html
+├── dress-code.html
+├── gifts.html
+├── rsvp.html
+├── location.html
+├── thank-you.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+└── images/
+    └── README.txt
+
+
+OVERALL DESIGN
+
+Create a premium modern wedding invitation website.
+
+The main visual direction should combine:
+- Emerald green luxury
+- Modern glassmorphism UI
+- Elegant wedding aesthetics
+- Soft gold accents
+- Romantic typography
+- Botanical decorations
+- Subtle animations
+- Premium card layouts
+- Dark emerald backgrounds
+- Frosted glass surfaces
+
+The website should look like a modern luxury wedding website, not a generic template.
+
+Use a sophisticated Emerald Green color palette.
+
+COLOR PALETTE
+
+Primary:
+- Deep Emerald Green
+- Forest Green
+- Dark Green
+
+Secondary:
+- Sage Green
+- Soft Ivory
+- Champagne
+
+Accent:
+- Elegant Gold
+
+Glass surfaces:
+- Semi-transparent white
+- Semi-transparent emerald
+- Subtle gold transparency
+
+Use CSS variables for the entire color system.
+
+Example:
+
+:root {
+    --emerald-dark: ...;
+    --emerald: ...;
+    --emerald-light: ...;
+    --sage: ...;
+    --gold: ...;
+    --ivory: ...;
+    --glass: ...;
+    --glass-border: ...;
+}
+
+
+GLASSMORPHISM UI
+
+Make glassmorphism one of the main design elements.
+
+Use:
+- backdrop-filter: blur()
+- Semi-transparent backgrounds
+- Soft borders
+- Subtle shadows
+- Inner highlights
+- Transparent gradients
+- Soft glow effects
+
+Glass cards should look like frosted glass.
+
+Example visual direction:
+
+┌─────────────────────────────────┐
+│                                 │
+│       ✦ WEDDING DETAILS ✦       │
+│                                 │
+│        August 15, 2027          │
+│                                 │
+│      2:00 PM • Ceremony         │
+│                                 │
+└─────────────────────────────────┘
+
+The card should have:
+- Transparent background
+- Blur effect
+- Thin gold or white border
+- Soft shadow
+- Slight glow
+- Rounded corners
+
+Do not make every element glass.
+
+Mix glass cards with ivory cards, emerald cards, photo cards, and gold-outline cards so the design has visual variety.
+
+
+GLASS NAVIGATION
+
+Create a floating glass navigation bar.
+
+Desktop:
+
+HOME | OUR STORY | DETAILS | ENTOURAGE | GALLERY | DRESS CODE | GIFTS | RSVP
+
+The navigation bar should:
+- Float above the page
+- Have a translucent glass background
+- Have backdrop blur
+- Have rounded corners
+- Have a subtle border
+- Have a soft shadow
+- Stay visible while scrolling
+
+Active navigation item:
+- Gold text
+- Gold underline
+- Soft glow
+
+Mobile:
+
+Use a glass hamburger button.
+
+When clicked, show a full-screen glass navigation panel.
+
+Animate the menu using:
+- Fade
+- Scale
+- Blur
+- Slide
+
+
+GLASS BUTTONS
+
+Create modern glass-style buttons.
+
+Examples:
+
+[ OPEN INVITATION ]
+
+[ VIEW MAP ]
+
+[ RSVP NOW ]
+
+[ ADD TO CALENDAR ]
+
+Buttons should have:
+- Glass background
+- Gold border
+- Slight glow
+- Smooth hover animation
+- Small upward movement on hover
+- Press animation on click
+
+On hover, slightly increase brightness and border glow.
+
+
+GLASS HERO SECTION
+
+The homepage should have a cinematic wedding hero section.
+
+Use:
+- Full-screen emerald background
+- Large couple names
+- Glass decorative frame
+- Floating botanical elements
+- Gold particles
+- Soft light gradients
+- Subtle background movement
+
+Couple names:
+
+SHANNEL
+&
+RANDY
+
+Use elegant serif typography.
+
+Animate the names with a slow text reveal.
+
+Example sequence:
+
+SHANNEL fades in.
+
+&
+appears.
+
+RANDY fades in.
+
+Then:
+
+“Together with their families”
+
+appears below.
+
+
+OPEN INVITATION EXPERIENCE
+
+Create an elegant glassmorphism invitation opening.
+
+Initial screen:
+
+A large glass invitation card appears in the center.
+
+Inside:
+
+THE WEDDING OF
+
+SHANNEL
+&
+RANDY
+
+August 15, 2027
+
+[ OPEN INVITATION ]
+
+Behind the card:
+- Dark emerald gradient
+- Floating particles
+- Soft golden light
+- Blurred botanical shapes
+
+When clicking Open Invitation:
+
+1. Button animates.
+2. Glass card slightly scales.
+3. Background blurs.
+4. Invitation opens.
+5. Overlay fades.
+6. Main website appears.
+7. Music control becomes available.
+
+Keep this animation smooth and elegant.
+
+
+CARD SYSTEM
+
+Create multiple glass-inspired card designs.
+
+Do not use one card design for every section.
+
+Create:
+
+1. Frosted Glass Card
+2. Emerald Glass Card
+3. Gold Outline Card
+4. Ivory Wedding Card
+5. Glass Profile Card
+6. Glass Timeline Card
+7. Glass Countdown Card
+8. Glass Photo Card
+9. Glass Information Card
+10. Glass RSVP Card
+
+Each card should have subtle differences.
+
+Use:
+- border-radius
+- backdrop-filter
+- gradients
+- shadows
+- borders
+- hover transforms
+
+Keep the cards elegant.
+
+
+OUR STORY
+
+Create a modern glass timeline.
+
+Each milestone should appear inside a glass card.
+
+Example:
+
+2019
+HOW WE MET
+
+Short description.
+
+2020
+FIRST DATE
+
+Short description.
+
+2023
+THE PROPOSAL
+
+Short description.
+
+2027
+THE WEDDING
+
+Short description.
+
+Animate each card when scrolling.
+
+Use IntersectionObserver.
+
+Animation:
+- opacity 0 → 1
+- translateY
+- slight scale
+- blur → clear
+
+
+WEDDING DETAILS
+
+Use a grid of glass information cards.
+
+CEREMONY
+
+Date
+Time
+Venue
+Address
+
+[ VIEW MAP ]
+
+RECEPTION
+
+Date
+Time
+Venue
+Address
+
+[ VIEW MAP ]
+
+COUNTDOWN
+
+Create four separate glass cards:
+
+DAYS
+HOURS
+MINUTES
+SECONDS
+
+Give the countdown cards a subtle glass glow.
+
+
+ENTOURAGE
+
+Create elegant glass profile cards.
+
+Each card should include:
+- Circular image
+- Name
+- Role
+- Small decorative gold element
+
+Add hover interaction.
+
+On hover:
+- Image slightly zooms
+- Card moves upward
+- Border becomes brighter
+- Gold glow appears
+
+
+GALLERY
+
+Create a premium glass photo gallery.
+
+Use:
+- Masonry layout
+- Rounded corners
+- Glass frames
+- Gold borders
+
+When clicking an image:
+- Open glassmorphism lightbox
+- Dark blurred background
+- Large image
+- Previous button
+- Next button
+- Close button
+
+Animate the modal smoothly.
+
+
+DRESS CODE
+
+Create elegant glass cards for dress code.
+
+Show:
+
+EMERALD GREEN
+SAGE
+CHAMPAGNE
+BEIGE
+BLACK
+
+Use color swatches inside glass cards.
+
+Create separate sections:
+
+LADIES
+
+GENTLEMEN
+
+Use placeholder outfit images.
+
+
+GIFTS
+
+Create glass gift cards.
+
+Cards:
+
+GCASH
+BANK TRANSFER
+OTHER
+
+Add:
+
+[ COPY ACCOUNT NUMBER ]
+
+When clicked:
+Show:
+
+“Copied!”
+
+Use a small glass notification.
+
+
+RSVP
+
+Create a large premium glass RSVP form.
+
+Fields:
+
+Full Name
+Email
+Number of Guests
+Attendance
+Message
+
+Options:
+
+Joyfully Accept
+Regretfully Decline
+
+Use floating labels if they look good.
+
+Add focus animations.
+
+Inputs should also have a glass style.
+
+Use:
+
+<form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+
+Do not create a custom backend.
+
+After successful submission, show a beautiful glass success message.
+
+
+LOCATION
+
+Create glass venue cards.
+
+CEREMONY
+Venue
+Address
+Time
+
+[ OPEN GOOGLE MAPS ]
+
+RECEPTION
+Venue
+Address
+Time
+
+[ OPEN GOOGLE MAPS ]
+
+Add a glass map container.
+
+
+ADD TO CALENDAR
+
+Create an elegant glass card containing:
+
+“Save Our Date”
+
+Buttons:
+
+[ GOOGLE CALENDAR ]
+
+[ DOWNLOAD CALENDAR FILE ]
+
+Prepare the JavaScript so the wedding information is easy to change.
+
+Use the wedding date, time, venue, and description as configurable variables.
+
+
+ANIMATION SYSTEM
+
+Use subtle premium animations.
+
+Include:
+- Fade in
+- Fade up
+- Fade left
+- Fade right
+- Scale in
+- Blur reveal
+- Text reveal
+- Letter spacing reveal
+- Floating animation
+- Slow gradient movement
+- Glass shimmer
+- Card hover lift
+- Image zoom
+- Gold border glow
+- Button hover
+- Navigation underline
+- Modal animation
+- Mobile menu animation
+
+Use IntersectionObserver for scroll animations.
+
+Avoid excessive animations.
+
+Animations should feel smooth and elegant.
+
+Use CSS transitions around 300ms to 700ms for normal UI interactions.
+
+Use slower animations for decorative elements.
+
+
+BACKGROUND EFFECTS
+
+Create layered backgrounds using CSS.
+
+Use:
+- Emerald gradients
+- Radial gradients
+- Soft golden glow
+- Blurred circles
+- Botanical shapes
+- Floating particles
+- Glass decorations
+
+Add slow-moving blurred background elements.
+
+Do not use heavy canvas effects.
+
+Keep performance good on mobile.
+
+
+TYPOGRAPHY
+
+Use elegant fonts such as:
+
+Playfair Display
+Cormorant Garamond
+Cinzel
+
+For body:
+
+Montserrat
+Poppins
+Inter
+
+Use serif typography for:
+- Couple names
+- Main headings
+- Wedding titles
+
+Use sans-serif for:
+- Navigation
+- Body text
+- Buttons
+- Forms
+
+
+DECORATIVE ELEMENTS
+
+Use subtle:
+- Botanical leaves
+- Floral line art
+- Gold ornaments
+- Circular frames
+- Thin decorative lines
+- Small stars
+- Gold particles
+
+Decorations should support the content and never overpower the text.
+
+
+FOOTER
+
+Create an elegant glass footer.
+
+Include:
+
+SHANNEL & RANDY
+
+August 15, 2027
+
+“Thank you for celebrating this special day with us.”
+
+Add navigation links.
+
+
+RESPONSIVE DESIGN
+
+Mobile-first design is required.
+
+Test layouts for:
+
+320px
+375px
+390px
+414px
+768px
+1024px
+1440px
+
+Glass cards should resize properly.
+
+Navigation must become a mobile hamburger menu.
+
+Avoid horizontal scrolling.
+
+Make text readable on small screens.
+
+Make buttons easy to tap.
+
+
+ACCESSIBILITY
+
+Use:
+- Semantic HTML
+- Proper heading hierarchy
+- Alt text
+- Keyboard navigation
+- Focus states
+- Good contrast
+- Reduced motion support
+
+Add:
+
+@media (prefers-reduced-motion: reduce)
+
+and reduce animations for users who prefer reduced motion.
+
+
+PERFORMANCE
+
+Keep the website lightweight.
+
+Use CSS instead of unnecessary JavaScript animations.
+
+Use lazy loading for gallery images.
+
+Do not load huge images.
+
+Do not use unnecessary libraries.
+
+Keep JavaScript modular and readable.
+
+
+CODE QUALITY
+
+Create complete working files.
+
+Do not provide pseudo-code.
+
+Do not leave important features unfinished.
+
+Use comments for important sections.
+
+Keep all global styling inside:
+
+css/style.css
+
+Keep JavaScript inside:
+
+js/script.js
+
+Use relative paths.
+
+Make sure the website works on GitHub Pages.
+
+
+FINAL DESIGN GOAL
+
+The final website should feel like a premium digital wedding invitation.
+
+Think:
+
+Luxury emerald wedding
++
+Modern glassmorphism
++
+Elegant editorial typography
++
+Soft gold accents
++
+Romantic animations
++
+Interactive cards
++
+Mobile-first design
+
+Every page should feel like part of the same wedding experience.
+
+Before finishing, test:
+
+- All page links
+- Mobile navigation
+- Desktop navigation
+- Opening invitation animation
+- Countdown
+- Scroll animations
+- Gallery lightbox
+- RSVP form
+- Copy account button
+- Music toggle
+- Google Maps buttons
+- Add to Calendar
+- Responsive layouts
+- Reduced motion support
+- GitHub Pages compatibility
+
+Generate the complete working project now.
