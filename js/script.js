@@ -210,6 +210,18 @@ const handleInvitationOpen = () => {
   if (!overlay) return;
   overlay.classList.add('hidden');
   document.body.classList.add('invitation-open');
+
+  setTimeout(() => {
+    const currentScroll = window.scrollY || window.pageYOffset || 0;
+    const maxScroll = Math.max(0, document.body.scrollHeight - window.innerHeight);
+    const targetScroll = Math.min(maxScroll, currentScroll + Math.max(220, window.innerHeight * 0.8));
+
+    window.scrollTo({
+      top: targetScroll,
+      behavior: 'smooth'
+    });
+  }, 260);
+
   initializeBackgroundMusic();
 };
 
